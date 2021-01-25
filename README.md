@@ -1,8 +1,8 @@
-# CREATE READ UPDATE DELETE
+# Create Read Update Delete
 
-## :dart: GOAL
+## :dart: Goal
 
-## :wrench: TOOLS
+## :wrench: Tools
 - Visual Studio Code
 - MAMP
 - MySQL Workbench
