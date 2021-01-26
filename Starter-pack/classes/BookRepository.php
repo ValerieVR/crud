@@ -15,6 +15,7 @@ class BookRepository
 
     public function create()
     {
+        
 
     }
 
@@ -27,29 +28,11 @@ class BookRepository
     // Get all
     public function get()
     {
-        // return [
-        //     ['title' => 'Moby Dick', 'author' => 'Herman Melville'],
-        //     ['title' => 'Don Quixote', 'author' => 'Miguelde Cervantes'],
-        //     ['title' => 'To Kill a Mockingbird', 'author' => 'Harper Lee'],
-        //     ['title' => 'The Trial', 'author' => 'Franz Kafka'],
-        //     ['title' => 'Gulliver\'s Travel', 'author' => 'Jonathan Swift']
-        // ];
-
         // We get the database connection first, so we can apply our queries with it
         // return $this->databaseManager->database-> (runYourQueryHere)
-        
-        
         $sql= 'SELECT * FROM book';
-        $result = $this->databaseManager->database->query($sql);
-        $result->setFetchMode(PDO::FETCH_ASSOC);
+        $result = $this->databaseManager->databaseConnection->query($sql);
         return $result;
-        
-
-
-
-        
-       
-
     }
 
     public function update()

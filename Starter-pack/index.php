@@ -13,6 +13,12 @@ require_once 'config.php';
 require_once 'classes/DatabaseManager.php';
 require_once 'classes/BookRepository.php';
 
+function whatIsHappening() { 
+    echo '<h2>$_POST</h2>';
+    var_dump($_POST);
+}
+whatIsHappening();
+
 $databaseManager = new DatabaseManager($config['host'], $config['user'], $config['password']);
 $databaseManager->connect();
 

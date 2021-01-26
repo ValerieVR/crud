@@ -16,7 +16,15 @@
 <?php foreach ($books as $book) : ?>
     <li><?= $book['title'] . ', ' . $book['author']?></li>
 <?php endforeach; ?>
+<?php $bookRepository->create(); ?>
 </ul>
+<form action="" method="post">
+	<label for="title">Book Title:</label>
+	<input type="text" name="title" id="title">
+	<label for="author">Author:</label>
+	<input type="text" name="author" id="author"><br><br> 
+	<button type="submit">Submit</button>
+</form>
 
 </body>
 </html>
