@@ -13,9 +13,9 @@
 <h1>Keep Track of Your Favorite Books</h1>
 
 <ul>
-<!-- <?php foreach ($books as $book) : ?>
+<?php foreach ($books as $book) : ?>
     <li><?= $book['title'] . ', ' . $book['author']?></li>
-<?php endforeach; ?> -->
+<?php endforeach; ?>
 </ul>
 
 </body>

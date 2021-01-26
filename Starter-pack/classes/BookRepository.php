@@ -41,8 +41,9 @@ class BookRepository
         
         $sql= 'SELECT * FROM book';
         $result = $this->databaseManager->database->query($sql);
-        // $result->setFetchMode(PDO::FETCH_ASSOC);
+        $result->setFetchMode(PDO::FETCH_ASSOC);
         return $result;
+        
 
 
 

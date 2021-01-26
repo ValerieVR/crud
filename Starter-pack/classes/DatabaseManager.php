@@ -18,11 +18,11 @@ class DatabaseManager{
     }
 
     public function connect(){
-        $this->database = "books";
+        // $this->database = "books";
         try {
-            $connection = new PDO("mysql:host={$this->host};dbname={$this->database}",$this->name,$this->password);
+            $connection = new PDO("mysql:host={$this->host};dbname=books",$this->name,$this->password);
             $connection->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-            return $connection;
+            $this->database = $connection;
         } catch (PDOException $exception) {
             echo "Connection failed: " . $exception->getMessage();
         }
