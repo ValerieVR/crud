@@ -11,15 +11,15 @@ error_reporting(E_ALL);
 // Load you classes
 require_once 'config.php';
 require_once 'classes/DatabaseManager.php';
-require_once 'classes/CardRepository.php';
+require_once 'classes/BookRepository.php';
 
 $databaseManager = new DatabaseManager($config['host'], $config['user'], $config['password']);
 $databaseManager->connect();
 
-// This example is about a Pokémon card collection
+// This example is about a Book collection
 // Update the naming if you'd like to work with another collection
-$cardRepository = new CardRepository($databaseManager);
-$cards = $cardRepository->get();
+$bookRepository = new BookRepository($databaseManager);
+$books = $bookRepository->get();
 
 // Load your view
 // Tip: you can load this dynamically and based on a variable, if you want to load another view

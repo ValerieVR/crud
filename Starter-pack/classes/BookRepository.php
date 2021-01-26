@@ -3,7 +3,7 @@
 // This class is focussed on dealing with queries for one type of data
 // That allows for easier re-using and it's rather easy to find all your queries
 // This technique is called the repository pattern
-class CardRepository
+class BookRepository
 {
     private $databaseManager;
 
@@ -27,14 +27,28 @@ class CardRepository
     // Get all
     public function get()
     {
-        // TODO: replace dummy data by real one
-        return [
-            ['name' => 'dummy one'],
-            ['name' => 'dummy two'],
-        ];
+        // return [
+        //     ['title' => 'Moby Dick', 'author' => 'Herman Melville'],
+        //     ['title' => 'Don Quixote', 'author' => 'Miguelde Cervantes'],
+        //     ['title' => 'To Kill a Mockingbird', 'author' => 'Harper Lee'],
+        //     ['title' => 'The Trial', 'author' => 'Franz Kafka'],
+        //     ['title' => 'Gulliver\'s Travel', 'author' => 'Jonathan Swift']
+        // ];
 
         // We get the database connection first, so we can apply our queries with it
         // return $this->databaseManager->database-> (runYourQueryHere)
+        
+        
+        $sql= 'SELECT * FROM book';
+        $result = $this->databaseManager->database->query($sql);
+        // $result->setFetchMode(PDO::FETCH_ASSOC);
+        return $result;
+
+
+
+        
+       
+
     }
 
     public function update()

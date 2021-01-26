@@ -2,8 +2,7 @@
 
 // This class will manage the connection to the database
 // It will be passed on the other classes who need it
-class DatabaseManager
-{
+class DatabaseManager{
     // These are private: only this class needs them
     private $host;
     private $name;
@@ -12,14 +11,20 @@ class DatabaseManager
     // We could also use a private variable and a getter (but let's not make things too complicated at this point)
     public $database;
 
-    public function __construct(string $host, string $name, string $password)
-    {
-        // TODO: Set any user and password information
+    public function __construct(string $host, string $name, string $password){
+        $this->host = $host;
+        $this->name = $name;
+        $this->password = $password;
     }
 
-    public function connect()
-    {
-        // TODO: make the connection to the database
-        $this->database = null;
+    public function connect(){
+        $this->database = "books";
+        try {
+            $connection = new PDO("mysql:host={$this->host};dbname={$this->database}",$this->name,$this->password);
+            $connection->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+            return $connection;
+        } catch (PDOException $exception) {
+            echo "Connection failed: " . $exception->getMessage();
+        }
     }
 }
