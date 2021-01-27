@@ -21,6 +21,7 @@ class BookRepository
             $sql = 'INSERT INTO book(title, author) VALUES(?,?)';
             $result = $this->databaseManager->database->prepare($sql);
             $result->execute([$title, $author]);
+            header('Location: index.php');
         }
     }
 
