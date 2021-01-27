@@ -15,14 +15,15 @@
 <ul>
 <?php foreach ($books as $book) : ?>
     <li><?= $book['title'] . ', ' . $book['author']?></li>
+	<a href="edit.php?id=<?= $book['id']?>">Edit</a>
+	<a href="delete.php?id=<?= $book['id']?>">Delete</a>
 <?php endforeach; ?>
-<?php $bookRepository->create(); ?>
 </ul>
 <form action="" method="post">
 	<label for="title">Book Title:</label>
 	<input type="text" name="title" id="title">
 	<label for="author">Author:</label>
-	<input type="text" name="author" id="author"><br><br> 
+	<input type="text" name="author" id="author">
 	<button type="submit">Submit</button>
 </form>
 

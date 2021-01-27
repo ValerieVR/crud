@@ -15,8 +15,13 @@ class BookRepository
 
     public function create()
     {
-        
-
+        if (!empty($_POST['title']) && !empty($_POST['author'])) {
+            $title = $_POST['title'];
+            $author = $_POST['author'];
+            $sql = 'INSERT INTO book(title, author) VALUES(?,?)';
+            $result = $this->databaseManager->database->prepare($sql);
+            $result->execute([$title, $author]);
+        }
     }
 
     // Get one
@@ -28,16 +33,22 @@ class BookRepository
     // Get all
     public function get()
     {
-        // We get the database connection first, so we can apply our queries with it
-        // return $this->databaseManager->database-> (runYourQueryHere)
         $sql= 'SELECT * FROM book';
-        $result = $this->databaseManager->databaseConnection->query($sql);
+        $result = $this->databaseManager->database->query($sql);
         return $result;
     }
 
     public function update()
     {
+        $id = $_GET['id'];
+        $title = $_POST['title'];
+        $author = $_POST['author'];
 
+        $sql = 'UPDATE book SET title=?, author=? WHERE id=?';
+        $result = $this->databaseManager->database->prepare($sql);
+        $result->execute([$title,$author,$id]);
+        
+        header('Location: index.php');
     }
 
     public function delete()

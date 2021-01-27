@@ -26,6 +26,8 @@ $databaseManager->connect();
 // Update the naming if you'd like to work with another collection
 $bookRepository = new BookRepository($databaseManager);
 $books = $bookRepository->get();
+$bookRepository->create();
+
 
 // Load your view
 // Tip: you can load this dynamically and based on a variable, if you want to load another view

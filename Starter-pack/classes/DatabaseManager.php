@@ -20,7 +20,7 @@ class DatabaseManager{
     public function connect(){
         try {
             $connection = new PDO("mysql:host={$this->host};dbname=books",$this->name,$this->password);
-            $this->databaseConnection = $connection;
+            $this->database = $connection;
             $connection->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $exception) {
             echo "Connection failed: " . $exception->getMessage();
