@@ -31,15 +31,13 @@ class BookRepository
     }
 
     // Get all
-    public function get()
-    {
+    public function get(){
         $sql= 'SELECT * FROM book';
         $result = $this->databaseManager->database->query($sql);
         return $result;
     }
 
-    public function update()
-    {
+    public function update(int $id, string $title, string $author){
         $sql = 'UPDATE book SET title=?, author=? WHERE id=?';
         $result = $this->databaseManager->database->prepare($sql);
         $result->execute([$title,$author,$id]);
