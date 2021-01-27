@@ -6,18 +6,6 @@
     <title>Bookworm</title>
 </head>
 <body>
-    <!-- <?php 
-    echo "<pre>";
-    var_dump($_POST);
-    echo "</pre>";
-    echo "<br>";
-    ?>
-    <?php
-    echo "<pre>";
-    var_dump($_GET);
-    echo "</pre>";
-    echo "<br>";
-    ?> -->
     <form action="" method="post">
         <label for="title">Book Title:</label>
         <input type="text" name="title" id="title">

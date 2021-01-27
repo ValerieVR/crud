@@ -45,9 +45,12 @@ class BookRepository
         header('Location: index.php');
     }
 
-    public function delete()
-    {
+    public function delete(int $id){
+        $sql = 'DELETE FROM book WHERE id=?';
+        $result = $this->databaseManager->database->prepare($sql);
+        $result->execute([$id]);
 
+        header('Location: index.php');
     }
 
 }
