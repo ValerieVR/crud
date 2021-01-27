@@ -13,6 +13,16 @@ require_once 'config.php';
 require_once 'classes/DatabaseManager.php';
 require_once 'classes/BookRepository.php';
 
+// What is happening?
+echo '<h2>$_GET</h2><br>';
+echo "<pre>";
+var_dump($_GET);
+echo "</pre>";
+echo '<h2>$_POST</h2><br>';
+echo "<pre>";
+var_dump($_POST);
+echo "</pre>";
+
 //instances of the classes
 $databaseManager = new DatabaseManager($config['host'], $config['user'], $config['password']);
 $databaseManager->connect();
