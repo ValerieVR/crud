@@ -26,9 +26,14 @@ class BookRepository
     }
 
     // Get one
-    public function find()
-    {
-
+    public function find(){
+        if (!empty($_GET['keyword'])) {
+            $keyword = $_GET['keyword'] . "%";
+            $sql = "SELECT * FROM book WHERE title LIKE '$keyword' OR author LIKE '$keyword'";
+            $result = $this->databaseManager->database->prepare($sql);
+            $result->execute();
+            return $result->fetch();
+        }
     }
 
     // Get all

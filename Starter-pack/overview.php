@@ -11,7 +11,13 @@
 <body>
 
 <h1>Keep Track of Your Favorite Books</h1>
-
+<form action="" method="get">
+	<input type="text" name="keyword">
+	<button type="submit" name="search-bttn">Search</button> 
+	<p><?php if (isset($_GET["search-bttn"])) {
+		echo $row["title"] . ", " . $row["author"];
+	}?></p>
+</form>
 <ul>
 <?php foreach ($books as $book) : ?>
     <li><?= $book['title'] . ', ' . $book['author']?></li>
