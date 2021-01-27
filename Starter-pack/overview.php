@@ -15,7 +15,7 @@
 <ul>
 <?php foreach ($books as $book) : ?>
     <li><?= $book['title'] . ', ' . $book['author']?></li>
-	<a href="edit.php?id=<?= $book['id']?>">Edit</a>
+	<a href="edit.php?id=<?=$book['id']?>&title=<?=$book['title']?>&author=<?=$book['author']?>">Edit</a>
 	<a href="delete.php?id=<?= $book['id']?>">Delete</a>
 <?php endforeach; ?>
 </ul>
