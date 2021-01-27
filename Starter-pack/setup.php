@@ -14,14 +14,14 @@ require_once 'classes/DatabaseManager.php';
 require_once 'classes/BookRepository.php';
 
 // What is happening?
-echo '<h2>$_GET</h2><br>';
+echo '<h2>$_GET</h2>';
 echo "<pre>";
 var_dump($_GET);
 echo "</pre>";
-echo '<h2>$_POST</h2><br>';
+echo '<h2>$_POST</h2>';
 echo "<pre>";
 var_dump($_POST);
-echo "</pre>";
+echo "</pre><br>";
 
 //instances of the classes
 $databaseManager = new DatabaseManager($config['host'], $config['user'], $config['password']);

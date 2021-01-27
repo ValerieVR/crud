@@ -1,6 +1,6 @@
 <?php
 
-require 'setup.php';
+require_once 'setup.php';
 
 $books = $bookRepository->get();
 $bookRepository->create();

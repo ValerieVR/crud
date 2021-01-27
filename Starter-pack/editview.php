@@ -23,7 +23,7 @@
         <input type="text" name="title" id="title">
         <label for="author">Author:</label>
         <input type="text" name="author" id="author">
-        <button type="submit" name="update">Update</button>
+        <button type="submit" name="update" value="update">Update</button>
     </form><br><br>
     <a href="index.php">Go Back</a>
 </body>

@@ -1,5 +1,5 @@
 <?php
-require 'setup.php';
+require_once 'setup.php';
 
 if (!empty($_POST['update'])) { 
     $id = $_GET['id'];
@@ -9,4 +9,4 @@ if (!empty($_POST['update'])) {
     $bookRepository->update($id,$title,$author);
 }
 
-require 'editview.php';
+require_once 'editview.php';
