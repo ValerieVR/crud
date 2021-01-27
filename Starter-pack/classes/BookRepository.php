@@ -40,10 +40,6 @@ class BookRepository
 
     public function update()
     {
-        $id = $_GET['id'];
-        $title = $_POST['title'];
-        $author = $_POST['author'];
-
         $sql = 'UPDATE book SET title=?, author=? WHERE id=?';
         $result = $this->databaseManager->database->prepare($sql);
         $result->execute([$title,$author,$id]);
